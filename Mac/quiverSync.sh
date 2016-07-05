@@ -23,4 +23,4 @@ SERVER="lorien"
 SRV_DEST="/srv/notes/"
 
 rsync --partial --del -az -q "$QUIVERLIB_LOC" $SERVER:"$SRV_DEST"
-ssh $SERVER 'quiver2html '$SRV_DEST'Quiver.qvlibrary/* -o '$SRV_DEST'Notebooks/'
+ssh $SERVER 'rm -rf '$SRV_DEST'Notebooks/*; quiver2html '$SRV_DEST'Quiver.qvlibrary/* -o '$SRV_DEST'Notebooks/'
